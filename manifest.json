@@ -1,0 +1,21 @@
+{
+  "name": "Aqib Murshidi Portfolio",
+  "short_name": "AqibM",
+  "description": "Quality Assurance Intern and Software Engineering Student",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f1e",
+  "theme_color": "#10b9e1",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
