@@ -73,20 +73,27 @@ window.addEventListener('DOMContentLoaded', () => {
     // Add hover animations to nav links
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
+        // Store original background color
+        const isActive = link.classList.contains('bg-cyan-500/20');
+        
         link.addEventListener('mouseenter', function() {
+            if (!isActive) {
+                this.classList.add('bg-slate-700', 'text-cyan-300');
+            }
             gsap.to(this, { 
                 duration: 0.3, 
-                scale: 1.1, 
-                boxShadow: '0 12px 30px rgba(255, 255, 255, 0.5)',
+                scale: 1.05,
                 ease: 'power2.out'
             });
         });
 
         link.addEventListener('mouseleave', function() {
+            if (!isActive) {
+                this.classList.remove('bg-slate-700', 'text-cyan-300');
+            }
             gsap.to(this, { 
                 duration: 0.3, 
-                scale: 1, 
-                boxShadow: '0 8px 20px rgba(255, 255, 255, 0.3)',
+                scale: 1,
                 ease: 'power2.out'
             });
         });
