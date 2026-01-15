@@ -1,6 +1,31 @@
 // GSAP Animation for Navigation Menu
 gsap.registerPlugin(ScrollTrigger);
 
+// Header hide/show on scroll
+let lastScrollTop = 0;
+let isHeaderVisible = true;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling DOWN - hide header (only if scrolled more than 100px)
+        if (isHeaderVisible) {
+            gsap.to(header, { duration: 0.4, y: -100, opacity: 0, pointerEvents: 'none', ease: 'power2.in' });
+            isHeaderVisible = false;
+        }
+    } else {
+        // Scrolling UP - show header
+        if (!isHeaderVisible) {
+            gsap.to(header, { duration: 0.4, y: 0, opacity: 1, pointerEvents: 'auto', ease: 'power2.out' });
+            isHeaderVisible = true;
+        }
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+
 window.addEventListener('DOMContentLoaded', () => {
     // Animate header on page load
     gsap.fromTo('header', 
