@@ -20,16 +20,19 @@
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-gray-100">
     <!-- Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-cyan-500/20 shadow-lg">
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-cyan-500/20 shadow-lg" id="mainHeader">
         <div class="max-w-6xl mx-auto px-4 py-6">
-            <h1 class="text-4xl font-bold text-white mb-2 tracking-tight">Aqib Murshidi</h1>
+            <div class="flex justify-between items-start mb-2">
+                <h1 class="text-4xl font-bold text-white tracking-tight">Aqib Murshidi</h1>
+                <button id="headerToggle" class="text-cyan-400 hover:text-cyan-300 transition text-2xl p-2" title="Toggle header">▲</button>
+            </div>
             <p class="text-gray-400 text-sm mb-4">QA Intern @ IPG MediaBrand | Software Engineering Student</p>
             <div class="flex flex-col sm:flex-row gap-3 text-sm text-gray-300 mb-4">
                 <a href="mailto:aqibmurshidi@gmail.com" class="hover:text-cyan-400 transition">📧 aqibmurshidi@gmail.com</a>
                 <a href="tel:+60115912759" class="hover:text-cyan-400 transition">📱 +601 13591-2759 </a>
                 <a href="https://github.com/aqibmurshidi" target="_blank" class="hover:text-cyan-400 transition">🔗 GitHub</a>
             </div>
-            <nav class="flex flex-wrap gap-2 justify-center sm:justify-start">
+            <nav id="headerNav" class="flex flex-wrap gap-2 justify-center sm:justify-start">
                 <a href="index.html" class="px-4 py-2 rounded-lg bg-cyan-500/20 text-cyan-300 hover:bg-cyan-500/40 transition font-medium text-sm">Home</a>
                 <a href="work-experience.html" class="px-4 py-2 rounded-lg text-gray-300 hover:bg-slate-700 transition font-medium text-sm">Work</a>
                 <a href="education.html" class="px-4 py-2 rounded-lg text-gray-300 hover:bg-slate-700 transition font-medium text-sm">Education</a>
